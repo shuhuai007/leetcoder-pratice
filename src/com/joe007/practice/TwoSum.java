@@ -32,7 +32,7 @@ public class TwoSum {
             }
         }
         int[] indexArr = new int[2];
-        if(numbers[smallValIndex - 1] > numbers[largeValIndex - 1]){
+        if(smallValIndex > largeValIndex){
             int tmp = smallValIndex;
             smallValIndex = largeValIndex;
             largeValIndex = tmp;
