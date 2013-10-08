@@ -32,9 +32,20 @@ public class SingleNumber {
 
         return 0;
     }
+    
+//    public int singleNumber(int[] A) {
+//        int size = A.length;
+//        for(int element : A){
+//            int index = element % size;
+//            
+//            
+//        }
+//
+//        return 0;
+//    }
 
     public static void main(String[] args) {
-        int [] testArr = {1, 1, 3, 8, 3, 5, 5};
+        int [] testArr = {2, 4, 5, 5, 2, 4, 8, 10, 10};
         SingleNumber instance = new SingleNumber();
         System.out.println(instance.singleNumber(testArr));
     }
