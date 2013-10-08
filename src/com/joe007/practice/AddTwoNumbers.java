@@ -15,53 +15,6 @@ import java.util.List;
  * End   Time : 2013/10/08 17:41
  */
 public class AddTwoNumbers {
-    
-//    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-//        // Note: The Solution object is instantiated only once and is reused by each test case.
-//        long num1 = ListNode2Number(l1);
-//        long num2 = ListNode2Number(l2);
-//        System.out.println("num1: " + num1);
-//        System.out.println("num2: " + num2);
-//        long sum = num1 + num2;
-//        System.out.println("sum: " + sum);
-//        ListNode sumNode = number2ListNode(sum);
-//        return sumNode;
-//    }
-    
-    private ListNode number2ListNode(long sum) {
-        if(0 == sum){
-            return new ListNode(0);
-        }
-
-        List<ListNode> tempList = new ArrayList<ListNode>();
-        while(sum > 0){
-//            System.out.println("--sum:" + sum);
-            int remainder = (int)sum % 10;
-//            System.out.println("--remainder:" + remainder);
-            tempList.add(new ListNode(remainder));
-            sum = sum / 10;
-//            System.out.println("--sum2:" + sum);
-        }
-
-        for(int index = tempList.size() - 2; index >= 0; index --){
-            ListNode currentNode = tempList.get(index);
-            ListNode nextNode = tempList.get(index + 1);
-            currentNode.next = nextNode;
-        }
-        return tempList.get(0);
-    }
-
-    private long ListNode2Number(ListNode listnode) {
-        long sumOfList = 0L;
-        int index = 0;
-        do{
-            int value = listnode.val;
-            sumOfList = (long) (sumOfList + value * Math.pow(10, index++));
-            listnode = listnode.next;
-        } while(listnode != null);
-
-        return sumOfList;
-    }
 
     public class ListNode {
         int val;
@@ -153,7 +106,7 @@ public class AddTwoNumbers {
         l2_6.next = l2_4;
         System.out.println(l2);
 
-//        System.out.println(instance.addTwoNumbers(l1, l2));
+        System.out.println(instance.addTwoNumbers(l1, l2));
         
         l1 = instance.new ListNode(5);
         System.out.println(l1);
