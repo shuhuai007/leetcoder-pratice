@@ -21,7 +21,8 @@ public class UniqueBinarySearchTrees {
     }
 
     public static void main(String[] args) {
-
+        UniqueBinarySearchTrees instance = new UniqueBinarySearchTrees();
+        System.out.println(instance.numTrees(10));
     }
 
 }

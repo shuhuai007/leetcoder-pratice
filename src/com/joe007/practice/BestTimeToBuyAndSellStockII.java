@@ -5,35 +5,10 @@ package com.joe007.practice;
  * Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). 
  * However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
  * Start Time : 2013/10/09 09:48
- * End   Time : 2013/10/09 
+ * End   Time : 2013/10/09 14:39
  */
 public class BestTimeToBuyAndSellStockII {
 
-//    public int maxProfit(int[] prices) {
-//        if(null == prices || 0 == prices.length){
-//            return 0;
-//        }
-//        int currentProfit = 0;
-//        int maxProfit = 0;
-//        for(int i = 1; i < prices.length; i++){
-//            int profit = prices[i] - prices[i-1];
-//            if(profit >= 0){
-//                currentProfit += profit;
-//                if(currentProfit > maxProfit){
-//                    maxProfit = currentProfit;
-//                }
-//            } else {
-//                if(currentProfit > maxProfit){
-//                    maxProfit = currentProfit;
-//                }
-//            }
-//
-//        }
-//
-//
-//        return maxProfit;
-//    }
-    
     public int maxProfit(int[] prices) {
         if(null == prices || 0 == prices.length){
             return 0;
@@ -46,7 +21,6 @@ public class BestTimeToBuyAndSellStockII {
             }
         }
 
-
         return currentProfit;
     }
 
@@ -54,8 +28,6 @@ public class BestTimeToBuyAndSellStockII {
         BestTimeToBuyAndSellStockII instance = new BestTimeToBuyAndSellStockII();
         int[] prices = {1,2,3,4};
         System.out.println(instance.maxProfit(prices));
-        
-
     }
 
 }
