@@ -13,15 +13,24 @@ public class BestTimeToBuyAndSellStockII {
 //        if(null == prices || 0 == prices.length){
 //            return 0;
 //        }
+//        int currentProfit = 0;
 //        int maxProfit = 0;
-//        for(int i = 0; i < prices.length - 1; i++){
-//            for(int j = i; j < prices.length; j++){
-//                int profit = prices[j] - prices[i];
-//                if(profit > maxProfit){
-//                    maxProfit = profit;
+//        for(int i = 1; i < prices.length; i++){
+//            int profit = prices[i] - prices[i-1];
+//            if(profit >= 0){
+//                currentProfit += profit;
+//                if(currentProfit > maxProfit){
+//                    maxProfit = currentProfit;
+//                }
+//            } else {
+//                if(currentProfit > maxProfit){
+//                    maxProfit = currentProfit;
 //                }
 //            }
+//
 //        }
+//
+//
 //        return maxProfit;
 //    }
     
@@ -30,35 +39,20 @@ public class BestTimeToBuyAndSellStockII {
             return 0;
         }
         int currentProfit = 0;
-        int maxProfit = 0;
         for(int i = 1; i < prices.length; i++){
             int profit = prices[i] - prices[i-1];
-            System.out.println("profit:" + profit);
             if(profit >= 0){
                 currentProfit += profit;
-                if(currentProfit > maxProfit){
-                    maxProfit = currentProfit;
-                }
-            } else {
-                if(currentProfit > maxProfit){
-                    maxProfit = currentProfit;
-                }
-                currentProfit = 0;
             }
-            System.out.println("currentProfit:" + currentProfit);
-            System.out.println("maxProfit:" + maxProfit);
-
         }
 
-//        if(0 == currentProfit){
-//            return 0;
-//        }
-        return maxProfit;
+
+        return currentProfit;
     }
 
     public static void main(String[] args) {
         BestTimeToBuyAndSellStockII instance = new BestTimeToBuyAndSellStockII();
-        int[] prices = {2,1,2,0,1};
+        int[] prices = {1,2,3,4};
         System.out.println(instance.maxProfit(prices));
         
 
