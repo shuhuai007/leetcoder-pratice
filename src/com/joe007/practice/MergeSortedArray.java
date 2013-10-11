@@ -8,7 +8,7 @@ package com.joe007.practice;
  * @author zhoujie
  * 
  * Start Time : 2013/10/11 : 16:02
- * End   Time : 2013/10/11 :
+ * End   Time : 2013/10/11 : 16:58
  *
  */
 public class MergeSortedArray {
@@ -57,7 +57,7 @@ public class MergeSortedArray {
         B[1] = 3;
         B[2] = 4;
         
-        instance.merge(A, 0, B, 3);
+        instance.merge(A, 3, B, 3);
         
         int newSize = 6;
         for(int i = 0; i < newSize; i++){
@@ -66,9 +66,7 @@ public class MergeSortedArray {
                 System.out.print(",");
             }
         }
-        int[] m = {};
-        System.out.println(m.length);
-        
+
     }
 
 }
