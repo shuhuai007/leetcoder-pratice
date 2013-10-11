@@ -44,7 +44,7 @@ public class MergeTwoSortedLists {
         ListNode p2 = list2;
         ListNode p3 = new ListNode(0);
 
-        ListNode currentP = p3;
+        ListNode currentNode = p3;
 
         while(p1 != null && p2 != null){
             ListNode minValNode = null;
@@ -55,17 +55,17 @@ public class MergeTwoSortedLists {
                 minValNode = p2;
                 p2 = p2.next;
             }
-            if(currentP.next != minValNode){
-                currentP.next = minValNode;
+            if(currentNode.next != minValNode){
+                currentNode.next = minValNode;
             }
-            currentP = minValNode;
+            currentNode = minValNode;
         }
 
         if(p1 == null){
-            currentP.next = p2;
+            currentNode.next = p2;
         }
         if(p2 == null){
-            currentP.next = p1;
+            currentNode.next = p1;
         }
 
         return p3.next;
