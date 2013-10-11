@@ -45,7 +45,7 @@ public class PascalTriangle {
 
     public static void main(String[] args) {
         PascalTriangle instance = new PascalTriangle();
-        ArrayList<ArrayList<Integer>>  resultList = instance.generate(5);
+        ArrayList<ArrayList<Integer>>  resultList = instance.generate(10);
         System.out.println("total row: " + resultList.size());
         for(ArrayList<Integer> rowList : resultList){
             System.out.println(rowList);
