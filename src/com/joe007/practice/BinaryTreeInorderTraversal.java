@@ -1,6 +1,7 @@
 package com.joe007.practice;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  * Given a binary tree, return the inorder traversal of its nodes' values.
@@ -49,9 +50,81 @@ public class BinaryTreeInorderTraversal {
         }
     }
 
+//    public ArrayList<Integer> inorderTraversal(TreeNode root) {
+//        ArrayList<Integer> resultList = new ArrayList<Integer>();
+//        recursiveTraversal(root, resultList);
+//        return resultList;
+//    }
+    
+//    public ArrayList<Integer> inorderTraversal(TreeNode root) {
+//        ArrayList<Integer> resultList = new ArrayList<Integer>();
+//        if(root == null){
+//            return resultList;
+//        }
+//        TreeNode currentNode = root;
+//        Stack<TreeNode> stack = new Stack<TreeNode>();
+//        stack.push(root);
+//        while(currentNode != null && currentNode.left != null){
+//            stack.push(currentNode.left);
+//            currentNode = currentNode.left;
+//        }
+//
+//        while(!stack.isEmpty()){
+//            currentNode = stack.pop();
+//            System.out.println("currentNode: " + currentNode.val);
+//            resultList.add(currentNode.val);
+//            currentNode.left = null;
+//
+//            if(currentNode.right != null){
+//                currentNode = currentNode.right;
+//                System.out.println("---");
+//                stack.push(currentNode);
+//            }
+//            while(currentNode != null && currentNode.left != null){
+//                stack.push(currentNode.left);
+//                currentNode = currentNode.left;
+//                System.out.println("-----");
+//            }
+//        }
+//        return resultList;
+//    }
+
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
         ArrayList<Integer> resultList = new ArrayList<Integer>();
-        recursiveTraversal(root, resultList);
+        if(root == null){
+            return resultList;
+        }
+//        TreeNode currentNode = root;
+//        Stack<TreeNode> stack = new Stack<TreeNode>();
+//        stack.push(root);
+//        while(currentNode != null && currentNode.left != null){
+//            stack.push(currentNode.left);
+//            currentNode = currentNode.left;
+//        }
+
+        TreeNode flagNode = new TreeNode(0);
+        flagNode.right = root;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(flagNode);
+        TreeNode currentNode;
+        while(!stack.isEmpty()){
+            currentNode = stack.pop();
+            System.out.println("currentNode: " + currentNode.val);
+            resultList.add(currentNode.val);
+            currentNode.left = null;
+
+            if(currentNode.right != null){
+                currentNode = currentNode.right;
+                System.out.println("---");
+                stack.push(currentNode);
+            }
+            while(currentNode != null && currentNode.left != null){
+                stack.push(currentNode.left);
+                currentNode = currentNode.left;
+                System.out.println("-----");
+            }
+        }
+        resultList.remove(0);
         return resultList;
     }
 
