@@ -1,7 +1,5 @@
 package com.joe007.practice;
 
-import com.joe007.practice.BinaryTreeLevelOrderTraversalII.TreeNode;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
