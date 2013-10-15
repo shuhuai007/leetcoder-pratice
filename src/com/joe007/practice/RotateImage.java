@@ -45,13 +45,7 @@ public class RotateImage {
                 matrix[i][j] = resultMatrix[i][j];
             }
         }
-//        for(int i = 0; i < matrix.length; i++){
-//            StringBuilder sb = new StringBuilder();
-//            for(int j = 0; j < matrix[0].length; j++){
-//                sb.append(matrix[i][j]).append(" ");
-//            }
-//            System.out.println(sb.toString());
-//        }
+
     }
 
     public static void main(String[] args) {
