@@ -43,19 +43,15 @@ public class GenerateParentheses {
                     } else {
                         newCharArr[j] = charArr[j-2];
                     }
-                    
-                    
                 }
                 String newStr = String.valueOf(newCharArr);
                 if(!resultList.contains(newStr)){
                     resultList.add(newStr);
                 }
-                
             }
             
         }
-     
-        
+
         return resultList;
     }
 
