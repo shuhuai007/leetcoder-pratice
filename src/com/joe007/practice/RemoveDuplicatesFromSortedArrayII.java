@@ -50,7 +50,5 @@ public class RemoveDuplicatesFromSortedArrayII {
         for(int item : A){
             System.out.print(item + ",");
         }
-
     }
-
 }
