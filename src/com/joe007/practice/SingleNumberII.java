@@ -24,7 +24,7 @@ public class SingleNumberII {
         if(A.length <= 3){
             return A[0];
         }
-        
+
         Map<Integer, Integer> timesMap = new HashMap<Integer, Integer>();
         for(int i = 0; i < A.length; i++){
             int element = A[i];
@@ -35,7 +35,7 @@ public class SingleNumberII {
                 times++;
                 timesMap.put(element, times);
             }
-            
+
         }
         for(int key : timesMap.keySet()){
             int value = timesMap.get(key);
@@ -50,7 +50,6 @@ public class SingleNumberII {
         SingleNumberII instance = new SingleNumberII();
         int[] A = {1,1,1,3,2,2,2,4,4,4};
         System.out.println(instance.singleNumber(A));
-
     }
 
 }
