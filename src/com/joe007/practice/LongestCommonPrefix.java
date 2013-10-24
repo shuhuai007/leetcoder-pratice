@@ -30,11 +30,9 @@ public class LongestCommonPrefix {
             }
             
         }
-        
-        
         return commonStr;
     }
-    
+
     private String compareStr(String currentStr, String commonStr) {
         int len1 = currentStr.length();
         int len2 = commonStr.length();
