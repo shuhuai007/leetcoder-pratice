@@ -78,7 +78,7 @@ public class SearchForRange {
         int firstNotEqualTargetIndex = a.length;
         while(i < j){
             int middleIndex = (i + j + 1)/2;
-            System.out.println("middleIndex:" + middleIndex );
+            System.out.println("middleIndex:" + middleIndex);
             if(a[middleIndex] == target){
                 i = middleIndex;
             } else if(a[middleIndex] > target && a[middleIndex - 1] == target){
