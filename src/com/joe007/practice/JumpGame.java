@@ -14,7 +14,7 @@ A = [3,2,1,0,4], return false.
  * @author zhoujie
  * 
  * Start Time : 2013/10/25 : 13:42
- * End   Time : 2013/10/25 :
+ * End   Time : 2013/10/25 : 16:52
  *
  */
 public class JumpGame {
