@@ -4,34 +4,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * 
- * Given a set of distinct integers, S, return all possible subsets.
+ * Given a collection of integers that might contain duplicates, S, return all possible subsets.
 
 Note:
 Elements in a subset must be in non-descending order.
 The solution set must not contain duplicate subsets.
 For example,
-If S = [1,2,3], a solution is:
+If S = [1,2,2], a solution is:
 
 [
-  [3],
-  [1],
   [2],
-  [1,2,3],
-  [1,3],
-  [2,3],
+  [1],
+  [1,2,2],
+  [2,2],
   [1,2],
   []
 ]
  * @author zhoujie
  * 
- * Start Time : 2013/10/24 : 16:56
- * End   Time : 2013/10/25 : 10:08
+ * Start Time == End Time : 10:17
  *
  */
-public class Subsets {
-
-    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
+public class SubsetsII {
+    public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] S) {
         ArrayList<ArrayList<Integer>> resultIndexList = new ArrayList<ArrayList<Integer>>();
         ArrayList<ArrayList<Integer>> resultList = new ArrayList<ArrayList<Integer>>();
         if(S == null || S.length == 0){
@@ -69,16 +64,21 @@ public class Subsets {
                 valueList.add(S[index]);
             }
             Collections.sort(valueList);
-            resultList.add(valueList);
+            if(!resultList.contains(valueList)){
+                resultList.add(valueList);
+            }
         }
-
+        
         return resultList;
     }
-    
+
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
-        Subsets instance = new Subsets();
+        SubsetsII instance = new SubsetsII();
         int[] S = {1,2,2};
-        System.out.println(instance.subsets(S));
+        System.out.println(instance.subsetsWithDup(S));
 
     }
 
