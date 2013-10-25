@@ -40,7 +40,7 @@ public class UniquePathsII {
         return uniquePaths(memo, obstacleGrid, rowNum, columnNum);
         
     }
-    
+
     private int uniquePaths(Map<String, Integer> memo, int[][] obstacleGrid, int m, int n) {
         if(m <= 0 || n <=0){
             return 0;
