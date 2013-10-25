@@ -29,7 +29,7 @@ public class UniquePaths {
             return 0;
         }
         if(m == 1 || n == 1){
-            memo.put(1 + "_" + 1, 1);
+            memo.put(m + "_" + n, 1);
             return 1;
         }
 
