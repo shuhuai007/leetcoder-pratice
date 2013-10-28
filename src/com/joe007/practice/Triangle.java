@@ -39,7 +39,6 @@ public class Triangle {
             if(sum < minSum){
                 minSum = sum;
             }
-            
         }
 
         return minSum;
