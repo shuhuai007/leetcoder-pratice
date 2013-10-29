@@ -3,9 +3,9 @@ package com.joe007.practice.utils;
 public class BinaryTree<E> {
     public static class TreeNode {
         Object data;
-        TreeNode parent;
-        TreeNode left;
-        TreeNode right;
+        public TreeNode parent;
+        public TreeNode left;
+        public TreeNode right;
 
         public TreeNode() {
         }
