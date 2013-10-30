@@ -53,7 +53,7 @@ public class CountAndSay {
     
     public static void main(String[] args) {
         CountAndSay instance = new CountAndSay();
-        System.out.println(instance.countAndSay(5));
+        System.out.println(instance.countAndSay(10));
 
     }
 
