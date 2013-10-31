@@ -78,24 +78,6 @@ public class UniqueBinarySearchTreesII {
             int rightMinValue = leftMaxValue + 2;
             int rightMaxValue = maxValue;
             ArrayList<TreeNode> rightChildList = generateTrees(n - 1 - leftCount, rightMinValue, rightMaxValue);
-//            if(leftChildList.isEmpty()){
-//                for(TreeNode rightRoot : rightChildList){
-//                    TreeNode currentNode = new TreeNode(leftMaxValue + 1);
-//                    if(rightRoot != null){
-//                        currentNode.right = rightRoot;
-//                    }
-//                    resultList.add(currentNode);
-//                }
-//            }
-//            if(rightChildList.isEmpty()){
-//                for(TreeNode leftRoot : leftChildList){
-//                    TreeNode currentNode = new TreeNode(leftMaxValue + 1);
-//                    if(leftRoot != null){
-//                        currentNode.left = leftRoot;
-//                    }
-//                    resultList.add(currentNode);
-//                }
-//            }
             for(TreeNode leftRoot : leftChildList){
                 for(TreeNode rightRoot : rightChildList){
                     TreeNode currentNode = new TreeNode(leftMaxValue + 1);
@@ -114,14 +96,7 @@ public class UniqueBinarySearchTreesII {
     }
     
     public ArrayList<TreeNode> generateTrees(int n) {
-//        if(n == 0){
-//            ArrayList<TreeNode> resultList =new ArrayList<TreeNode>();
-//            resultList.add(null);
-//            return resultList;
-//        }
-        
-        ArrayList<TreeNode>  resultList = generateTrees(n, 1, n);
-        return resultList;
+        return generateTrees(n, 1, n);
     }
 
     public static void main(String[] args) {
