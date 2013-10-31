@@ -10,7 +10,7 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 1,1,5 → 1,5,1
  * @author zhoujie
  * Start Time : 2013/10/31 : 13:15
- * End   Time : 2013/10/31 :
+ * End   Time : 2013/10/31 : 14:15
  *
  */
 public class NextPermutation {
@@ -51,8 +51,7 @@ public class NextPermutation {
 
         }
 
-        
-        System.out.println("i:" + i + "; j: " + j);
+//        System.out.println("i:" + i + "; j: " + j);
         int temp = num[i];
         num[i] = num[j];
         num[j] = temp;
