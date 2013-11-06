@@ -63,6 +63,22 @@ public class EditDistance {
 		
 		return steps;
 	}
+	
+	private String findMaxChildStr(String word1, String word2){
+		int word1Len = word1.length();
+		int word2Len = word2.length();
+		int i = 0;
+		int j = 0;
+		while(i <= word1Len - 1 && j <= word2Len){
+			
+			
+			
+			
+		}
+		
+		
+		return null;
+	}
 
 	private boolean existInStr(String word2, int i, char word1Char) {
 		word2 = word2.substring(i);
@@ -80,7 +96,9 @@ public class EditDistance {
 		EditDistance instance = new EditDistance();
 		String word1 = "sea";
 		String word2 = "eat";
-		System.out.println(instance.minDistance(word1, word2));
+		
+		System.out.println("max child str: " + instance.findMaxChildStr(word1, word2)); 
+//		System.out.println(instance.minDistance(word1, word2));
 		
 //		char a= 'b';
 //		String teststr = "hello";
