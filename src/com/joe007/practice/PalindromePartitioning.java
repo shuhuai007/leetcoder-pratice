@@ -15,7 +15,7 @@ Return
   ]
  * @author zhoujie
  * Start Time : 2013/11/06 : 19:10
- * End   Time : 2013/11/06 : 
+ * End   Time : 2013/11/06 : 20:43
  *
  */
 public class PalindromePartitioning {
@@ -61,14 +61,6 @@ public class PalindromePartitioning {
 			ArrayList<String> newPartitionList = new ArrayList<String>(partitionList);
 			newPartitionList.add(currentLastChar);
 			resultList.add(newPartitionList);
-			
-			String lastElement = partitionList.get(partitionList.size() - 1);
-			String lastElementExtend = lastElement + currentLastChar;
-			if(isPalindrome(lastElementExtend)){
-				partitionList.remove(partitionList.size() - 1);
-				partitionList.add(lastElementExtend);
-				resultList.add(partitionList);
-			}
 		}
 	}
 
