@@ -84,15 +84,15 @@ public class RemoveDuplicatesFromSortedListII {
     public static void main(String[] args) {
         RemoveDuplicatesFromSortedListII instance = new RemoveDuplicatesFromSortedListII();
         ListNode head = instance.new ListNode(1);
-//        ListNode node1 = instance.new ListNode(1);
-//        ListNode node2 = instance.new ListNode(2);
-//        ListNode node3 = instance.new ListNode(3);
-//        ListNode node33 = instance.new ListNode(3);
+        ListNode node1 = instance.new ListNode(1);
+        ListNode node2 = instance.new ListNode(2);
+        ListNode node3 = instance.new ListNode(3);
+        ListNode node33 = instance.new ListNode(3);
         
-//        head.next = node1;
-//        node1.next = node2;
-//        node2.next = node3;
-//        node3.next = node33;
+        head.next = node1;
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node33;
 
         System.out.println(head);
         System.out.println("deleted: " + instance.deleteDuplicates(head));
