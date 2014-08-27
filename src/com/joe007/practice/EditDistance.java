@@ -1,108 +1,84 @@
 package com.joe007.practice;
 
 /**
- * Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. (each operation is counted as 1 step.
-You have the following 3 operations permitted on a word:
-a) Insert a character
-b) Delete a character
-c) Replace a character
- * @author zhoujie
- * Start Time : 2013/11/06 : 16:37
- * End   Time : 2013/11/06 : 17:23
- *
+ * Given two words word1 and word2, find the minimum number of steps required to
+ * convert word1 to word2. (each operation is counted as 1 step. You have the
+ * following 3 operations permitted on a word: a) Insert a character b) Delete a
+ * character c) Replace a character
+ * 
+ * @author zhoujie Start Time : 2013/11/06 : 16:37 End Time : 2013/11/06 : 17:23
+ * 
  */
 public class EditDistance {
-
 	public int minDistance(String word1, String word2) {
-		if(word1 == null || word1.trim().equals("")){
-			return len(word2);
+		if (word1 == null || word1.length() == 0) {
+			return word2.length();
 		}
-		
-		if(word2 == null || word2.trim().equals("")){
-			return len(word1);
+		if (word2 == null || word2.length() == 0) {
+			return word1.length();
 		}
+
+		int w1 = word1.length();
+		int w2 = word2.length();
+
+		int[][] maxCount = new int[w1+1][w2+1];
+
+		int firsti = -1;
+		int firstj = -1;
+		int endi = -1;
+		int endj = -1;
+		boolean access = false;
 		
-		if(word1.equals(word2)){
-			return 0;
-		}
-		
-		int steps = 0;
-//		int word1Index = 0;
-		int i = 0;
-		for(i = 0; i < word2.length(); i++){
-			char currentChar = word2.charAt(i);
-			System.out.println("i:" + i + "; currentChar:" + currentChar);
-			if(i > word1.length() - 1){
-				// should insert
-				steps++;
-				word1 = word1 + currentChar;
-			} else {
-				// word1 char
-				char word1Char = word1.charAt(i);
-				if(word1Char == currentChar){
-					continue;
-				} else {
-					if(existInStr(word2, i, word1Char)){
-						// insert currentChar
-						steps++;
-						word1 = word1.substring(0, i) + currentChar + word1.substring(i, word1.length());
-					} else {
-						// replace currentChar
-						steps++;
-						word1 = word1.substring(0, i) + currentChar + word1.substring(i + 1, word1.length());
+		for (int i = 1; i <= w1; i++) {
+			for (int j = 1; j <= w2; j++) {
+				if (word1.charAt(i-1) == word2.charAt(j-1)) {
+					if(!access){
+						firsti = i-1;
+						firstj = j-1;
+						access = true;
 					}
+					endi = i - 1;
+					endj = j - 1;
+					
+					maxCount[i][j] = maxCount[i - 1][j - 1] + 1;
+				} else {
+					maxCount[i][j] = Math.max(maxCount[i - 1][j],
+							maxCount[i][j - 1]);
 				}
 			}
-			
 		}
-		
-		System.out.println("steps:" + steps + "; i:" + i);
-		if(i < word1.length()){
-			steps += (word1.length() - i);
-		}
-		
-		return steps;
-	}
-	
-	private String findMaxChildStr(String word1, String word2){
-		int word1Len = word1.length();
-		int word2Len = word2.length();
-		int i = 0;
-		int j = 0;
-		while(i <= word1Len - 1 && j <= word2Len){
-			
-			
-			
-			
-		}
-		
-		
-		return null;
-	}
 
-	private boolean existInStr(String word2, int i, char word1Char) {
-		word2 = word2.substring(i);
-		return word2.contains(String.valueOf(word1Char));
-	}
-
-	private int len(String word2) {
-		if(word2 == null){
-			return 0;
+		int minDistance = 0;
+		if(firsti == -1){
+			minDistance = Math.max(w1, w2);
+		} else {
+			System.out.println("firsti:" + firsti + " endi:" + endi +
+					           " firstj:" + firstj + " endj:" + endj); 
+			minDistance = Math.max(firsti, firstj) + Math.max(endi - firsti + 1 - maxCount[w1][w2],
+					endj - firstj + 1 - maxCount[w1][w2]) + Math.max(w1 - endi - 1,	w2 - endj - 1);
 		}
-		return word2.length();
+
+		return minDistance;
 	}
 
 	public static void main(String[] args) {
 		EditDistance instance = new EditDistance();
+//		String word1 = "sea";
+//		String word2 = "eat";
+		
+//		String word1 = "a";
+//		String word2 = "b";
+		
 		String word1 = "sea";
-		String word2 = "eat";
-		
-		System.out.println("max child str: " + instance.findMaxChildStr(word1, word2)); 
-//		System.out.println(instance.minDistance(word1, word2));
-		
-//		char a= 'b';
-//		String teststr = "hello";
-//		System.out.println(teststr + a);
+		String word2 = "ate";
+
+//		System.out.println("max child str: "
+//				+ instance.findMaxChildStr(word1, word2));
+		 System.out.println(instance.minDistance(word1, word2));
+
+		// char a= 'b';
+		// String teststr = "hello";
+		// System.out.println(teststr + a);
 
 	}
 
