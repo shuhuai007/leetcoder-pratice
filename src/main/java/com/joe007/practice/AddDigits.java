@@ -5,6 +5,6 @@ package com.joe007.practice;
  */
 public class AddDigits {
     public int addDigits(int num) {
-
+        return 0;
     }
 }
