@@ -38,5 +38,4 @@ public class ReverseStringTest {
         s = "abcd";
         Assert.assertEquals("dcba", reverseString.reverseString(s));
     }
-
 }
