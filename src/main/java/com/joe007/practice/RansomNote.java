@@ -13,20 +13,20 @@ public class RansomNote {
      * @return true if the ransom can be constructed from magazine
      */
     public boolean canConstruct(String ransomNote, String magazine) {
-        if (ransomNote == null || ransomNote.isEmpty()) {
-            return true;
-        }
-        if (magazine == null || magazine.isEmpty()) {
-            return false;
-        }
-        char firstChar = ransomNote.charAt(0);
-        int midIndex = getMiddleIndex(magazine);
-        if (firstChar == magazine.charAt(midIndex)) {
-            return canConstruct(ransomNote.substring(1), magazine.substring(0, midIndex))
-                    || canConstruct(ransomNote.substring(1), magazine.substring(midIndex + 1));
-        } else {
-            return canConstruct(ransomNote, )
-        }
+//        if (ransomNote == null || ransomNote.isEmpty()) {
+//            return true;
+//        }
+//        if (magazine == null || magazine.isEmpty()) {
+//            return false;
+//        }
+//        char firstChar = ransomNote.charAt(0);
+//        int midIndex = getMiddleIndex(magazine);
+//        if (firstChar == magazine.charAt(midIndex)) {
+//            return canConstruct(ransomNote.substring(1), magazine.substring(0, midIndex))
+//                    || canConstruct(ransomNote.substring(1), magazine.substring(midIndex + 1));
+//        } else {
+//            return canConstruct(ransomNote, )
+//        }
 
         return true;
     }
