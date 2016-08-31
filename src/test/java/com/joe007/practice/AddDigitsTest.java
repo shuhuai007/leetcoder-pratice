@@ -1,5 +1,6 @@
 package com.joe007.practice;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -11,7 +12,7 @@ public class AddDigitsTest {
     @Test
     public void addDigitsTest() {
         int num = 38;
-        instance.addDigits(num);
+        Assert.assertEquals(2, instance.addDigits(num));
 
     }
 }

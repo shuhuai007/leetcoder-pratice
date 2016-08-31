@@ -5,6 +5,17 @@ package com.joe007.practice;
  */
 public class AddDigits {
     public int addDigits(int num) {
-        return 0;
+
+        String numStr = String.valueOf(num);
+        if (numStr.length() == 1) {
+            return Integer.valueOf(numStr);
+        }
+        int sum = 0;
+        for (char bit : numStr.toCharArray()) {
+            int bitNum = Integer.valueOf(String.valueOf(bit));
+            sum += bitNum;
+        }
+
+        return addDigits(sum);
     }
 }
