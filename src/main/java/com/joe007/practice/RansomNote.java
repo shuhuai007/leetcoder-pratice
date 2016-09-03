@@ -1,5 +1,8 @@
 package com.joe007.practice;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by jiezhou on 8/15/16.
  */
@@ -27,6 +30,27 @@ public class RansomNote {
 //        } else {
 //            return canConstruct(ransomNote, )
 //        }
+
+        Map<Character, Integer> char2CountMap = new HashMap<Character, Integer>();
+        for (char magazineChar : magazine.toCharArray()) {
+            int count = 1;
+            if (char2CountMap.containsKey(magazineChar)) {
+                count = char2CountMap.get(magazineChar) + 1;
+            }
+            char2CountMap.put(magazineChar, count);
+        }
+
+        for (char ransomChar : ransomNote.toCharArray()) {
+            if (!char2CountMap.containsKey(ransomChar)) {
+                return false;
+            }
+            int count = char2CountMap.get(ransomChar);
+            if (count <= 0) {
+                return false;
+            }
+
+            char2CountMap.put(ransomChar, --count);
+        }
 
         return true;
     }

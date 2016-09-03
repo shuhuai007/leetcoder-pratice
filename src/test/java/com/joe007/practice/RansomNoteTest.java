@@ -17,5 +17,8 @@ public class RansomNoteTest {
     @Test
     public void canConstructTest() {
         Assert.assertTrue(instance.canConstruct("aa", "aab"));
+        Assert.assertFalse(instance.canConstruct("aaa", "aab"));
+        Assert.assertFalse(instance.canConstruct("m", "aab"));
+        Assert.assertFalse(instance.canConstruct("maab", "aab"));
     }
 }
